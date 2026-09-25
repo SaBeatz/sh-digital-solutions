@@ -1,15 +1,556 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SH Digital Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SH Digital Solutions</title>
+<meta name="description" content="PC-Upgrades, Gaming- und Streaming-Setups, Software und digitale Lösungen – persönlich und unkompliziert.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b10;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8, 11, 16, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1d2633;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 25px 50px;
+    background:
+        radial-gradient(circle at 50% 35%, rgba(56,189,248,.15), transparent 35%),
+        #080b10;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    padding: 7px 16px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 90px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: normal;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: #94a3b8;
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: #061018;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(56,189,248,.25);
+}
+
+.btn-secondary {
+    border: 1px solid #334155;
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: #38bdf8;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 25px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: #38bdf8;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+/* SERVICES */
+
+.services {
+    background: #0b1017;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #101720;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    color: #94a3b8;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.about-box {
+    background: linear-gradient(145deg, #101720, #0c1219);
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.about-box div {
+    padding: 17px 0;
+    border-bottom: 1px solid #1e293b;
+}
+
+.about-box div:last-child {
+    border: none;
+}
+
+.check {
+    color: #38bdf8;
+    margin-right: 10px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #0b1017;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    background: #101720;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    padding: 50px 30px;
+}
+
+.contact-box h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #1e293b;
+    padding: 30px 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    section {
+        padding: 75px 20px;
+    }
+}
+</style>
 </head>
 
-<body>
-    <h1>SH Digital Solutions</h1>
-    <h2>Digital gedacht, persönlich gelöst!</h2>
 
-    <p>Unsere neue Website ist bald verfügbar. 🚀</p>
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">SH <span>Digital Solutions</span></div>
+
+        <ul>
+            <li><a href="#start">Start</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ueber">Über mich</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- START -->
+
+<header class="hero" id="start">
+
+    <div class="hero-content">
+
+        <div class="badge">DIGITALE LÖSUNGEN · PERSÖNLICHER SERVICE</div>
+
+        <h1>
+            SH <span>Digital</span><br>
+            Solutions
+        </h1>
+
+        <h2>Digital gedacht, persönlich gelöst!</h2>
+
+        <p>
+            Individuelle Lösungen rund um PC, Gaming, Streaming,
+            Software und digitale Technik – verständlich,
+            persönlich und ohne unnötigen Technik-Kauderwelsch.
+        </p>
+
+        <div class="buttons">
+            <a href="#leistungen" class="btn btn-primary">
+                Leistungen ansehen
+            </a>
+
+            <a href="#kontakt" class="btn btn-secondary">
+                Kontakt aufnehmen
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- LEISTUNGEN -->
+
+<section class="services" id="leistungen">
+
+<div class="container">
+
+    <div class="section-title">
+        <span>Was ich anbiete</span>
+        <h2>Meine Leistungen</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🖥️</div>
+            <h3>PC & Hardware</h3>
+            <p>
+                PC-Gehäuseumzug, Hardware-Upgrades,
+                Komponenten einbauen und Unterstützung
+                beim Zusammenstellen deines PCs.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Gaming Setup</h3>
+            <p>
+                Einrichtung und Optimierung deines
+                Gaming-Setups – vom PC bis zur Peripherie.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎥</div>
+            <h3>Streaming Setup</h3>
+            <p>
+                OBS, Streaming-Software, Kamera,
+                Mikrofon, Szenen und Overlays –
+                auch per Fernwartung.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌈</div>
+            <h3>RGB & PC Design</h3>
+            <p>
+                RGB-Beleuchtung, Lüfter,
+                Controller und individuelle
+                optische PC-Anpassungen.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Software & Einrichtung</h3>
+            <p>
+                Programme installieren,
+                Systeme einrichten und Software
+                nach deinen Bedürfnissen konfigurieren.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Digitale Lösungen</h3>
+            <p>
+                Unterstützung bei digitalen Projekten,
+                KI-Inhalten, Social Media und
+                individuellen technischen Lösungen.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ÜBER MICH -->
+
+<section id="ueber">
+
+<div class="container about-grid">
+
+    <div class="about-text">
+
+        <h2>Technik muss nicht kompliziert sein.</h2>
+
+        <p>
+            Bei SH Digital Solutions bekommst du persönliche
+            Unterstützung rund um PC, Gaming, Streaming
+            und digitale Technik.
+        </p>
+
+        <p>
+            Keine unnötigen Fachbegriffe und keine
+            Lösungen von der Stange. Gemeinsam schauen wir,
+            was du wirklich brauchst.
+        </p>
+
+    </div>
+
+
+    <div class="about-box">
+
+        <div>
+            <span class="check">✓</span>
+            Persönlicher Kontakt
+        </div>
+
+        <div>
+            <span class="check">✓</span>
+            Individuelle Lösungen
+        </div>
+
+        <div>
+            <span class="check">✓</span>
+            Verständliche Beratung
+        </div>
+
+        <div>
+            <span class="check">✓</span>
+            Vor Ort & Fernunterstützung
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- KONTAKT -->
+
+<section class="contact" id="kontakt">
+
+<div class="container">
+
+    <div class="contact-box">
+
+        <h2>Du hast ein Projekt?</h2>
+
+        <p>
+            Schreib mir und erzähl mir kurz, wobei du
+            Unterstützung brauchst. Gemeinsam finden
+            wir eine passende Lösung.
+        </p>
+
+        <a href="mailto:info@sh-digital-solutions.de"
+           class="btn btn-primary">
+            ✉ Nachricht senden
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    © 2026 SH Digital Solutions ·
+    Digital gedacht, persönlich gelöst!
+
+</footer>
+
 </body>
 </html>
