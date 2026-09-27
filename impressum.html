@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum | SH Digital Solutions</title>
+<meta name="robots" content="index,follow">
+<style>
+:root{
+  --bg:#050914;
+  --panel:#0b1220;
+  --panel2:#0f1a2c;
+  --text:#f5f7fb;
+  --muted:#aeb9cc;
+  --blue:#1597ff;
+  --blue2:#57c5ff;
+  --border:rgba(87,197,255,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(21,151,255,.18),transparent 34%),
+    linear-gradient(180deg,#030711 0%,var(--bg) 100%);
+  color:var(--text);
+  line-height:1.7;
+}
+header{
+  border-bottom:1px solid var(--border);
+  background:rgba(3,7,17,.92);
+}
+.header-inner{
+  width:min(1080px,92%);
+  margin:auto;
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{width:170px;height:auto;display:block}
+.back{
+  color:#fff;
+  text-decoration:none;
+  border:1px solid rgba(21,151,255,.65);
+  border-radius:10px;
+  padding:9px 14px;
+  font-weight:700;
+}
+.back:hover{background:rgba(21,151,255,.12)}
+main{width:min(900px,92%);margin:48px auto 70px}
+h1{
+  margin:0 0 10px;
+  font-size:clamp(2rem,5vw,3.2rem);
+  letter-spacing:-.03em;
+}
+.lead{color:var(--muted);margin:0 0 32px}
+.card{
+  background:linear-gradient(180deg,rgba(15,26,44,.95),rgba(8,15,28,.95));
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.28);
+}
+h2{font-size:1.25rem;margin:30px 0 8px;color:var(--blue2)}
+h2:first-child{margin-top:0}
+h3{font-size:1.05rem;margin:22px 0 6px}
+p{margin:8px 0 14px}
+a{color:var(--blue2)}
+.address{font-style:normal}
+footer{
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  text-align:center;
+  padding:24px 16px 36px;
+}
+.footer-links{margin-top:8px}
+.footer-links a{margin:0 8px;text-decoration:none}
+@media(max-width:600px){
+  .header-inner{min-height:78px}
+  .logo{width:135px}
+  .back{font-size:.88rem;padding:8px 10px}
+  main{margin-top:32px}
+  .card{padding:21px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" aria-label="SH Digital Solutions Startseite">
+      <img src="logo-header.png" alt="SH Digital Solutions" class="logo">
+    </a>
+    <a href="index.html" class="back">← Zur Startseite</a>
+  </div>
+</header>
+
+<main>
+  <h1>Impressum</h1>
+  <p class="lead">Anbieterkennzeichnung für SH Digital Solutions</p>
+
+  <section class="card">
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <address class="address">
+      <strong>SH Digital Solutions</strong><br>
+      Inhaber: Sabit Hodzaj<br>
+      Lissaboner Str. 7<br>
+      67069 Ludwigshafen am Rhein<br>
+      Deutschland
+    </address>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+4917623323878">0176 23323878</a><br>
+      E-Mail: <a href="mailto:info@sh-digital-solutions.de">info@sh-digital-solutions.de</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 SH Digital Solutions
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+</body>
+</html>
